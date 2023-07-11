@@ -22,11 +22,19 @@ def tipo_tarjeta(numero_de_tarjeta: str) -> str:
 
 #Ejercicio 4
 def digitos_impares(numero_de_tarjeta : str) -> list[int]:
-    return
+    pos_impares = []
+    for i in range (len(numero_de_tarjeta)):
+        if (((i+1) % 2) != 0): 
+            pos_impares.append(int(numero_de_tarjeta[len(numero_de_tarjeta)-1-i]))
+    return  pos_impares
 
 #Ejercicio 5
 def digitos_pares(numero_de_tarjeta: str) -> list[int]:
-    return
+    pos_pares = []
+    for i in range (len(numero_de_tarjeta)):
+        if (((i+1) % 2) == 0): 
+            pos_pares.append(int(numero_de_tarjeta[len(numero_de_tarjeta)-1-i]))
+    return  pos_pares   
 
 #Ejercicio 6
 def sumar_digitos(lista_digitos : list[int]) -> int:
@@ -38,4 +46,4 @@ def luhn(numero_de_tarjeta :  str) -> bool:
 
 #Ejercicio 8
 def validar_tarjeta(numero_de_tarjeta : str) -> bool:
-    return
+    return 
