@@ -1,4 +1,7 @@
 #Ejercicio 1
+from re import S
+
+
 def digitos(numero_de_tarjeta: str) -> int:
     return len(numero_de_tarjeta)
 
@@ -38,10 +41,52 @@ def digitos_pares(numero_de_tarjeta: str) -> list[int]:
 
 #Ejercicio 6
 def sumar_digitos(lista_digitos : list[int]) -> int:
-    return
+    suma = 0
+    for numero in lista_digitos:
+        numero_str = str(numero) 
+        for digito in numero_str:
+            suma += int(digito) 
+
+            
+    return suma
+
 
 #Ejercicio 7
 def luhn(numero_de_tarjeta :  str) -> bool:
+
+    def pordos(mult):
+        return mult *2
+    lista_de_pares = digitos_pares(numero_de_tarjeta)
+    multi = map (pordos,lista_de_pares)
+
+    sumauno = sumar_digitos (multi) #3
+    numcuatro = digitos_impares (numero_de_tarjeta) #4
+    s =  sumar_digitos (numcuatro)
+
+
+    cinco = s + sumauno 
+    
+    
+
+    if ((cinco) %10) == 0:
+
+        bool = True
+
+    else: 
+
+        bool = False
+    return bool
+    
+
+
+
+   
+
+
+
+
+
+    
     return
 
 #Ejercicio 8
